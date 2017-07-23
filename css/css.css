@@ -1,10 +1,4 @@
-#preload {
-    hidden: true;
-    height:auto;
-    width: auto;
-    display: none;
-    visibility:hidden;
-}
+
 hml, body, div, canvas {
     margin: 0;
     padding: 0;
