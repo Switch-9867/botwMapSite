@@ -16,22 +16,16 @@ function map(){
     };
 
     this.update = function(){
-        //if(mousePressed){
-        //    console.log(this.x + " 1");
-        //    this.x = this.x + mouseDragged.x;
-        //    this.y = this.y + mouseDragged.y;
-        //    console.log(this.x + " 2");
-        //    this.xOld = this.x;
-        //    this.yOld = this.y;
-        //    console.log(this.x + " 3");
-        //}
-        //else{
-        //    this.x = this.xOld;
-        //    this.y = this.yOld;
-        //};
-
-        this.x += mouseDragged.x;
-        this.y += mouseDragged.y;
+        if(mousePressed){
+            this.x = this.xOld + mouseDragged.x;
+            this.y = this.yOld + mouseDragged.y;
+        }
+        else{
+            this.xOld = this.x;
+            this.yOld = this.y;
+            this.x = this.xOld;
+            this.y = this.yOld;
+        };
         
         //console.log(this.x + " " + this.y);
         this.draw();
