@@ -94,6 +94,6 @@ function addPos(pos1, pos2){
 
 }
 
-function drawImageGrid(xPos,yPos,width,height){
-    return
+function drawImageGrid(xPos,yPos,width,height,hImageCnt,vImageCnt){
+    
 }

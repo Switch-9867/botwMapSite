@@ -11,7 +11,7 @@ function map(){
     };
 
     this.draw = function(){
-        ctx.drawImage(botwMapImg, this.x, this.y, this.width(), this.height());
+        ctx.drawImage(botwMapImg, this.x , this.y , this.width(), this.height());
         //draw icons here
     };
 
