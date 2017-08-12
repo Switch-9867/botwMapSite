@@ -3,16 +3,34 @@ function map(){
     this.y = 0;
     this.yOld = 0;
     this.xOld = 0;
+    this.sWidth = 31;
+    this.sHeight = 31;
     this.width = function(){
-        return botwMapImg.width + (zoomFactor * zoomSpeed);
-    }
+        return 5000 + (zoomFactor * zoomSpeed) * zoomMul;
+    };
     this.height = function(){
-        return (botwMapImg.width + (zoomFactor * zoomSpeed))* 0.8334;
+        return (5000 + (zoomFactor * zoomSpeed)* zoomMul)* 0.8334;
     };
 
     this.draw = function(){
-        ctx.drawImage(botwMapImg, this.x , this.y , this.width(), this.height());
-        //draw icons here
+        if(zoomFactor < 0){
+            ctx.drawImage(botwMapImgFull, this.x , this.y , this.width(), this.height());
+            console.log("drew full")
+        }
+        else{
+            for (x = 0; x < this.sWidth; x++) { 
+                for (y = 0; y < this.sHeight; y++) {
+                    if(x*(this.width()/31)+this.x > -this.width()/31 && x*(this.width()/31)+this.x < c.width && y*(this.height()/31)+this.y > -this.height()/31 && y*(this.height()/31)+this.y < c.height){
+                        ctx.drawImage(botwMapImg[x][y], (x*(this.width()/31)+this.x), (y*(this.height()/31))+this.y, this.width()/31, this.height()/31);
+                    }
+                }
+            }
+            console.log("drew smol")
+        }
+        
+        
+        
+        
     };
 
     this.update = function(){
