@@ -50,8 +50,11 @@ var zoomMin = -9999;
 
 var botwMapImgFull = document.getElementById("botwMapImg");
 
+
+//initialize 2d array (prolly super bad way to do it)
 var botwMapImg = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 
+//initialize all images that make up the map (dont do it like this)
 botwMapImg[0][0] = document.getElementById("0-0");
 botwMapImg[0][1] = document.getElementById("0-1");
 botwMapImg[0][2] = document.getElementById("0-2");
